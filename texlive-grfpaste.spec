@@ -1,3 +1,9 @@
+# revision 17354
+# category Package
+# catalog-ctan /macros/latex/contrib/grfpaste
+# catalog-date 2010-03-06 14:40:43 +0100
+# catalog-license lppl
+# catalog-version 0.2
 Name:		texlive-grfpaste
 Version:	0.2
 Release:	1
@@ -43,6 +49,7 @@ include dvi files. The package requires the dvipaste program.
 %doc %{_texmfdistdir}/doc/latex/grfpaste/grfp1.tex
 %doc %{_texmfdistdir}/doc/latex/grfpaste/grfp2.tex
 %doc %{_texmfdistdir}/doc/latex/grfpaste/grfp3.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -53,3 +60,5 @@ include dvi files. The package requires the dvipaste program.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
