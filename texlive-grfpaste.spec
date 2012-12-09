@@ -50,3 +50,17 @@ include dvi files. The package requires the dvipaste program.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.2-2
++ Revision: 752446
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.2-1
++ Revision: 718584
+- texlive-grfpaste
+- texlive-grfpaste
+- texlive-grfpaste
+- texlive-grfpaste
+
