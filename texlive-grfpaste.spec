@@ -6,7 +6,7 @@
 # catalog-version 0.2
 Name:		texlive-grfpaste
 Version:	0.2
-Release:	3
+Release:	4
 Summary:	Include fragments of a dvi file
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/grfpaste
