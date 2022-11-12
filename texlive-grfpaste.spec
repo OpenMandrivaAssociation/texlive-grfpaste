@@ -1,18 +1,12 @@
-# revision 17354
-# category Package
-# catalog-ctan /macros/latex/contrib/grfpaste
-# catalog-date 2010-03-06 14:40:43 +0100
-# catalog-license lppl
-# catalog-version 0.2
 Name:		texlive-grfpaste
-Version:	0.2
-Release:	11
+Version:	17354
+Release:	1
 Summary:	Include fragments of a dvi file
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/grfpaste
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/grfpaste.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/grfpaste.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/grfpaste.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/grfpaste.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -24,12 +18,12 @@ graphicx package, so that you can use \includegraphics to
 include dvi files. The package requires the dvipaste program.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -43,24 +37,10 @@ include dvi files. The package requires the dvipaste program.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.2-2
-+ Revision: 752446
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.2-1
-+ Revision: 718584
-- texlive-grfpaste
-- texlive-grfpaste
-- texlive-grfpaste
-- texlive-grfpaste
-
