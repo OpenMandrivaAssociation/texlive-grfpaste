@@ -1,6 +1,6 @@
 Name:		texlive-grfpaste
 Version:	17354
-Release:	1
+Release:	2
 Summary:	Include fragments of a dvi file
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/grfpaste
