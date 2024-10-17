@@ -3,7 +3,7 @@ Version:	17354
 Release:	2
 Summary:	Include fragments of a dvi file
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/grfpaste
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/grfpaste
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/grfpaste.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/grfpaste.doc.r%{version}.tar.xz
