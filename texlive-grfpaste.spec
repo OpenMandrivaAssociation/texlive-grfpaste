@@ -1,46 +1,22 @@
-Name:		texlive-grfpaste
-Version:	17354
-Release:	2
+%global tl_name grfpaste
+%global tl_revision 79618
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.2
+Release:	%{tl_revision}.1
 Summary:	Include fragments of a dvi file
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/grfpaste
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/grfpaste.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/grfpaste.doc.r%{version}.tar.xz
+License:	lppl1
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/grfpaste.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/grfpaste.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-Provides a mechanism to include fragments of dvi files with the
-graphicx package, so that you can use \includegraphics to
-include dvi files. The package requires the dvipaste program.
+Provides a mechanism to include fragments of dvi files with the graphicx
+package, so that you can use \includegraphics to include dvi files. The
+package requires the dvipaste program.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/grfpaste/grfpaste.sty
-%doc %{_texmfdistdir}/doc/latex/grfpaste/doc/grfpaste.pdf
-%doc %{_texmfdistdir}/doc/latex/grfpaste/doc/grfpaste.tex
-%doc %{_texmfdistdir}/doc/latex/grfpaste/dvipaste.txt
-%doc %{_texmfdistdir}/doc/latex/grfpaste/grfp1.tex
-%doc %{_texmfdistdir}/doc/latex/grfpaste/grfp2.tex
-%doc %{_texmfdistdir}/doc/latex/grfpaste/grfp3.tex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
